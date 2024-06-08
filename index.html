@@ -19,7 +19,7 @@
         <h1>Create and share your event</h1>
         <p>The first step is to fill out this registration form.</p>
       </header>
-      <form action="">
+      <form id="form">
         <fieldset>
           <div id="fieldset-wrapper">
             <legend>Event's Information</legend>
@@ -28,13 +28,13 @@
               <label for="event-title"
                 >Title <span>(At least 8 characters)</span></label
               >
-              <input type="text" id="event-title" />
+              <input type="text" id="event-title" required minlength="8" />
             </div>
             <div id="input-wrapper">
               <label for="event-url"
                 >URL <span>(Start with http://)</span></label
               >
-              <input type="text" id="event-url" />
+              <input type="url" id="event-url" />
             </div>
             <div id="input-wrapper">
               <label for="event-whatsapp"
@@ -56,7 +56,54 @@
             </div>
           </div>
         </fieldset>
+
+        <fieldset>
+          <div id="fieldset-wrapper">
+            <legend>Privacy</legend>
+            <div id="input-wrapper">
+              <label for="event-email"
+                >Admin's email <span>(Enter a valid email)</span></label
+              >
+              <input type="email" id="event-email" />
+            </div>
+            <div id="input-wrapper">
+              <label for="event-password"
+                >Viewers' Password <span>(At least 8 characters)</span></label
+              >
+              <input type="password" id="event-password" />
+            </div>
+            <div id="checkbox-wrapper">
+              <input type="checkbox" id="event-private" />
+              <label for="event-private">Private?</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="fieldset-wrapper">
+            <legend>Date and Time</legend>
+
+            <div id="date-wrapper">
+              <div id="input-wrapper">
+                <label for="event-date">Date </label>
+                <input type="date" id="event-date" />
+              </div>
+              <div id="input-wrapper">
+                <label for="event-from-hour">From</label>
+
+                <input type="time" id="event-from-hour" />
+              </div>
+              <div id="input-wrapper">
+                <label for="event-to-hour">To</label>
+                <input type="time" id="event-to-hour" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </form>
+      <footer>
+        <input class="button" type="submit" form="form" value="Submit" />
+      </footer>
     </div>
   </body>
 </html>
